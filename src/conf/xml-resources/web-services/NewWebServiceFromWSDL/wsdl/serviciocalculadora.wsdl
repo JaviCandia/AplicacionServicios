@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+    name="serviciocalculadora"
+    targetNamespace="http://www.itorizaba.com/serviciocalculadora.wsdl"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://www.itorizaba.com/serviciocalculadora.wsdl"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd1="http://www.itorizaba.com/serviciocalculadora.xsd1">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Created using Cape Clear Studio SOA Editor - http://www.capeclear.com</wsdl:documentation>
+    <wsdl:types>
+        <xsd:schema
+            targetNamespace="http://www.itorizaba.com/serviciocalculadora.xsd1"
+            xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:xsd1="http://www.itorizaba.com/serviciocalculadora.xsd1"> </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="sumarMessageRequest">
+        <wsdl:part name="a" type="xsd:int"/>
+        <wsdl:part name="b" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="multiplicarResponse">
+        <wsdl:part name="respuesta" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="dividirRequest">
+        <wsdl:part name="a" type="xsd:float"/>
+        <wsdl:part name="b" type="xsd:float"/>
+    </wsdl:message>
+    <wsdl:message name="sumarMessageResponse">
+        <wsdl:part name="respuesta" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="restarRequest">
+        <wsdl:part name="a" type="xsd:int"/>
+        <wsdl:part name="b" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="restarResponse">
+        <wsdl:part name="respuesta" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="multiplicarRequest">
+        <wsdl:part name="a" type="xsd:int"/>
+        <wsdl:part name="b" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="dividirResponse">
+        <wsdl:part name="respuesta" type="xsd:float"/>
+    </wsdl:message>
+    <wsdl:portType name="serviciocalculadoraPortType">
+        <wsdl:operation name="sumar">
+            <wsdl:input message="tns:sumarMessageRequest"/>
+            <wsdl:output message="tns:sumarMessageResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="restar">
+            <wsdl:input message="tns:restarRequest"/>
+            <wsdl:output message="tns:restarResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="multiplicar">
+            <wsdl:input message="tns:multiplicarRequest"/>
+            <wsdl:output message="tns:multiplicarResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="dividir">
+            <wsdl:input message="tns:dividirRequest"/>
+            <wsdl:output message="tns:dividirResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding
+        name="serviciocalculadoraBinding"
+        type="tns:serviciocalculadoraPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="sumar">
+            <soap:operation
+                soapAction="capeconnect:serviciocalculadora:serviciocalculadoraPortType#sumar"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="restar">
+            <soap:operation
+                soapAction="capeconnect:serviciocalculadora:serviciocalculadoraPortType#restar"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="multiplicar">
+            <soap:operation
+                soapAction="capeconnect:serviciocalculadora:serviciocalculadoraPortType#multiplicar"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="dividir">
+            <soap:operation
+                soapAction="capeconnect:serviciocalculadora:serviciocalculadoraPortType#dividir"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="serviciocalculadora">
+        <wsdl:port
+            binding="tns:serviciocalculadoraBinding"
+            name="serviciocalculadoraPort">
+            <soap:address location="http://localhost:8000/ccx/serviciocalculadora"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

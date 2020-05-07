@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Servicios%20WSDL/serviciocalculadora.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/serviciocalculadora.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/servicioAlumnosInscritos.wsdl" uri="src/conf/xml-resources/web-services/servInscritos/wsdl/servicioAlumnosInscritos.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/servicioalumnosporcarrera.wsdl" uri="src/conf/xml-resources/web-services/servInscritosporCarrera/wsdl/servicioalumnosporcarrera.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/serviciobaja.wsdl" uri="src/conf/xml-resources/web-services/servBaja/wsdl/serviciobaja.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/servicioObtenerDetalles.wsdl" uri="src/conf/xml-resources/web-services/servDetalles/wsdl/servicioObtenerDetalles.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/servicioalumnosInscritosporSemestre.wsdl" uri="src/conf/xml-resources/web-services/servInscritosporSemestre/wsdl/servicioalumnosInscritosporSemestre.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/servicioestaInscrito.wsdl" uri="src/conf/xml-resources/web-services/servEstaInscrito/wsdl/servicioestaInscrito.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/servicioalumnosInscritosporPromedio.wsdl" uri="src/conf/xml-resources/web-services/servInscritosporPromedio/wsdl/servicioalumnosInscritosporPromedio.wsdl"/>
+    <system systemId="file:/C:/Servicios%20WSDL/servicioalumnosInscritosporRangoEdad.wsdl" uri="src/conf/xml-resources/web-services/servRangoEdad/wsdl/servicioalumnosInscritosporRangoEdad.wsdl"/>
+    <system systemId="http://localhost:8080/AplicacionServicio/servicioObtenerDetalles?WSDL" uri="src/conf/xml-resources/web-service-references/servicioObtenerDetalles/wsdl/localhost_8080/AplicacionServicio/servicioObtenerDetalles.wsdl"/>
+    <system systemId="http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos?WSDL" uri="src/conf/xml-resources/web-service-references/servicioAlumnosInscritos/wsdl/localhost_8080/AplicacionServicio/servicioAlumnosInscritos.wsdl"/>
+    <system systemId="http://localhost:8080/AplicacionServicio/servicioalumnosporcarrera?WSDL" uri="src/conf/xml-resources/web-service-references/servicioalumnosporcarrera/wsdl/localhost_8080/AplicacionServicio/servicioalumnosporcarrera.wsdl"/>
+</catalog>
