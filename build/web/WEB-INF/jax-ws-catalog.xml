@@ -12,4 +12,5 @@
     <system systemId="http://localhost:8080/AplicacionServicio/servicioObtenerDetalles?WSDL" uri="wsdl/localhost_8080/AplicacionServicio/servicioObtenerDetalles.wsdl"/>
     <system systemId="http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos?WSDL" uri="wsdl/localhost_8080/AplicacionServicio/servicioAlumnosInscritos.wsdl"/>
     <system systemId="http://localhost:8080/AplicacionServicio/servicioalumnosporcarrera?WSDL" uri="wsdl/localhost_8080/AplicacionServicio/servicioalumnosporcarrera.wsdl"/>
+    <system systemId="http://localhost:8080/AplicacionServicio/servicioRestaurante?WSDL" uri="wsdl/localhost_8080/AplicacionServicio/servicioRestaurante.wsdl"/>
 </catalog>

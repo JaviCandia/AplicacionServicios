@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+    name="servicioRestaurante"
+    targetNamespace="http://www.itorizaba.com/servicioRestaurante.wsdl"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://www.itorizaba.com/servicioRestaurante.wsdl"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd1="http://www.itorizaba.com/servicioRestaurante.xsd1">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Created using Cape Clear Studio SOA Editor - http://www.capeclear.com</wsdl:documentation>
+    <wsdl:types>
+        <xsd:schema
+            targetNamespace="http://www.itorizaba.com/servicioRestaurante.xsd1"
+            xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:xsd1="http://www.itorizaba.com/servicioRestaurante.xsd1">
+            <xsd:complexType name="Menu">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="platillo" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="ingredientes" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="precio" type="xsd:float"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArregloMenu">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="item" type="xsd1:Menu"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Restaurante">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="nombre" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="direccion" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="descripcion" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="menu" type="xsd1:ArregloMenu"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArregloRestaurante">
+                <xsd:sequence>
+                    <xsd:element
+                        maxOccurs="unbounded"
+                        minOccurs="1"
+                        name="item"
+                        type="xsd1:Restaurante"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="getRestaurantesRequest">
+        <wsdl:part name="ciudad" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getRestaurantesResponse">
+        <wsdl:part name="respuesta" type="xsd1:ArregloRestaurante"/>
+    </wsdl:message>
+    <wsdl:portType name="servicioRestaurantePortType">
+        <wsdl:operation name="getRestaurantes">
+            <wsdl:input message="tns:getRestaurantesRequest"/>
+            <wsdl:output message="tns:getRestaurantesResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding
+        name="servicioRestauranteBinding"
+        type="tns:servicioRestaurantePortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getRestaurantes">
+            <soap:operation
+                soapAction="capeconnect:servicioRestaurante:servicioRestaurantePortType#getRestaurantes"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="servicioRestaurante">
+        <wsdl:port
+            binding="tns:servicioRestauranteBinding"
+            name="servicioRestaurantePort">
+            <soap:address location="http://localhost:8000/ccx/servicioRestaurante"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

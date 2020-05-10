@@ -75,6 +75,22 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/www/cliente/carrera"/>
         <delete dir="${build.generated.dir}/jax-wsCache/servicioalumnosporcarrera"/>
     </target>
+    <target name="wsimport-client-servicioRestaurante" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/servicioRestaurante"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/servicioRestaurante" destdir="${build.generated.dir}/jax-wsCache/servicioRestaurante" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/servicioRestaurante/wsdl/localhost_8080/AplicacionServicio/servicioRestaurante.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AplicacionServicio/servicioRestaurante?WSDL" xnocompile="true" xendorsed="true" package="www.cliente.Restaurante">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/servicioRestaurante/wsdl/localhost_8080/AplicacionServicio/servicioRestaurante.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/servicioRestaurante"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/servicioRestaurante">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-servicioRestaurante" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/www/cliente/Restaurante"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/servicioRestaurante"/>
+    </target>
     <target name="wsimport-service-NewWebServiceFromWSDL" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL" destdir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL" wsdl="${basedir}/${conf-dir}xml-resources/web-services/NewWebServiceFromWSDL/wsdl/serviciocalculadora.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" xnocompile="true" xendorsed="true">
@@ -246,6 +262,44 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/itorizaba/servicioalumnosinscritosporrangoedad"/>
         <delete dir="${build.generated.dir}/jax-wsCache/service/servRangoEdad"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-servicioObtenerDetalles, wsimport-client-servicioAlumnosInscritos, wsimport-client-servicioalumnosporcarrera"/>
-    <target name="wsimport-service-generate" depends="wsimport-service-NewWebServiceFromWSDL, wsimport-service-servInscritos, wsimport-service-servInscritosporCarrera, wsimport-service-servBaja, wsimport-service-servDetalles, wsimport-service-servInscritosporSemestre, wsimport-service-servEstaInscrito, wsimport-service-servInscritosporPromedio, wsimport-service-servRangoEdad"/>
+    <target name="wsimport-service-servProductos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/service/servProductos"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/service/servProductos" destdir="${build.generated.dir}/jax-wsCache/service/servProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-services/servProductos/wsdl/servicioProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-services/servProductos/wsdl/servicioProductos.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/service/servProductos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/service/servProductos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy todir="${build.web.dir}/WEB-INF/wsdl/servProductos">
+            <fileset dir="${basedir}/${conf-dir}xml-resources/web-services/servProductos/wsdl/"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-clean-servProductos" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/itorizaba/servicioproductos"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/service/servProductos"/>
+    </target>
+    <target name="wsimport-service-servRestaurante" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/service/servRestaurante"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/service/servRestaurante" destdir="${build.generated.dir}/jax-wsCache/service/servRestaurante" wsdl="${basedir}/${conf-dir}xml-resources/web-services/servRestaurante/wsdl/servicioRestaurante.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-services/servRestaurante/wsdl/servicioRestaurante.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/service/servRestaurante"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/service/servRestaurante">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy todir="${build.web.dir}/WEB-INF/wsdl/servRestaurante">
+            <fileset dir="${basedir}/${conf-dir}xml-resources/web-services/servRestaurante/wsdl/"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-clean-servRestaurante" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/itorizaba/serviciorestaurante"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/service/servRestaurante"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-servicioObtenerDetalles, wsimport-client-servicioAlumnosInscritos, wsimport-client-servicioalumnosporcarrera, wsimport-client-servicioRestaurante"/>
+    <target name="wsimport-service-generate" depends="wsimport-service-NewWebServiceFromWSDL, wsimport-service-servInscritos, wsimport-service-servInscritosporCarrera, wsimport-service-servBaja, wsimport-service-servDetalles, wsimport-service-servInscritosporSemestre, wsimport-service-servEstaInscrito, wsimport-service-servInscritosporPromedio, wsimport-service-servRangoEdad, wsimport-service-servProductos, wsimport-service-servRestaurante"/>
 </project>

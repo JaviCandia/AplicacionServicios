@@ -5,6 +5,12 @@
  */
 package www.servicios.InscritosporCarrera;
 
+import clases.database;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.jws.WebService;
 
 /**
@@ -15,71 +21,41 @@ import javax.jws.WebService;
 public class servInscritosporCarrera {
 
     public com.itorizaba.servicioalumnosporcarrera.ArregloAlumno alumnosInscritosporCarrera(java.lang.String carrera) {
-        //TODO implement this method
-        //throw new UnsupportedOperationException("Not implemented yet.");
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
         com.itorizaba.servicioalumnosporcarrera.ArregloAlumno arreglo = new com.itorizaba.servicioalumnosporcarrera.ArregloAlumno();
         
-        if(carrera.equals("Sistemas")){
-            for(int i=0; i<50; i++){
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "");
+        } catch (SQLException ex) {
+        }
+
+        try {
+            conn = database.getConnection();
+            stmt = conn.prepareStatement("select * from alumno where carrera = '"+carrera+"'");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
                 com.itorizaba.servicioalumnosporcarrera.Alumno alumno = new com.itorizaba.servicioalumnosporcarrera.Alumno();
-                alumno.setNumControl("15423654"+i);
-                alumno.setCarrera("Sistemas");
-                alumno.setDireccion("Dirrecion: "+i);
-                alumno.setEdad("21");
-                alumno.setEmail("Alumno"+i+"@gmail.com");
-                alumno.setNombre("Nombre: "+i);
-                alumno.setPromedio("90");
-                alumno.setSemestre("Septimo");
-                alumno.setTelefono("2222222222");
+                alumno.setNumControl(rs.getString("num_control"));
+                alumno.setCarrera(rs.getString("carrera"));
+                alumno.setDireccion(rs.getString("direccion"));
+                alumno.setEdad(rs.getString("edad"));
+                alumno.setEmail(rs.getString("email"));
+                alumno.setPromedio(rs.getString("promedio"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setTelefono(rs.getString("telefono"));
+                alumno.setSemestre(rs.getString("semestre"));
                 arreglo.getItem().add(alumno);
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            database.close(rs);
+            database.close(stmt);
+            database.close(conn);
         }
-        else if(carrera.equals("Quimica")){
-            for(int i=0; i<40; i++){
-                com.itorizaba.servicioalumnosporcarrera.Alumno alumno = new com.itorizaba.servicioalumnosporcarrera.Alumno();
-                alumno.setNumControl("14423654"+i);
-                alumno.setCarrera("Quimica");
-                alumno.setDireccion("Dirrecion: "+i);
-                alumno.setEdad("23");
-                alumno.setEmail("Alumno"+i+"@gmail.com");
-                alumno.setNombre("Nombre: "+i);
-                alumno.setPromedio("90");
-                alumno.setSemestre("Noveno");
-                alumno.setTelefono("333333333");
-                arreglo.getItem().add(alumno);
-            }
-        }
-        else if(carrera.equals("Electronica")){
-            for(int i=0; i<30; i++){
-                com.itorizaba.servicioalumnosporcarrera.Alumno alumno = new com.itorizaba.servicioalumnosporcarrera.Alumno();
-                alumno.setNumControl("16423654"+i);
-                alumno.setCarrera("Electronica");
-                alumno.setDireccion("Dirrecion: "+i);
-                alumno.setEdad("22");
-                alumno.setEmail("Alumno"+i+"@gmail.com");
-                alumno.setNombre("Nombre: "+i);
-                alumno.setPromedio("94");
-                alumno.setSemestre("Octavo");
-                alumno.setTelefono("4444444444");
-                arreglo.getItem().add(alumno);
-            }
-        }
-        else{
-            for(int i=0; i<40; i++){
-                com.itorizaba.servicioalumnosporcarrera.Alumno alumno = new com.itorizaba.servicioalumnosporcarrera.Alumno();
-                alumno.setNumControl("17423654"+i);
-                alumno.setCarrera("Gestion Empresarial");
-                alumno.setDireccion("Dirrecion: "+i);
-                alumno.setEdad("20");
-                alumno.setEmail("Alumno"+i+"@gmail.com");
-                alumno.setNombre("Nombre: "+i);
-                alumno.setPromedio("90");
-                alumno.setSemestre("Sexto");
-                alumno.setTelefono("5555555555");
-                arreglo.getItem().add(alumno);
-            }
-        }
-        
         return arreglo;
     }
     

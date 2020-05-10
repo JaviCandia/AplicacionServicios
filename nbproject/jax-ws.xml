@@ -289,6 +289,70 @@
         </wsimport-option>
       </wsimport-options>
     </service>
+    <service name="servProductos">
+      <implementation-class>www.servicios.Productos.servProductos</implementation-class>
+      <wsdl-url>file:/C:/Servicios%20WSDL/servicioProductos.wsdl</wsdl-url>
+      <local-wsdl-file>servicioProductos.wsdl</local-wsdl-file>
+      <service-name>servicioProductos</service-name>
+      <port-name>servicioProductosPort</port-name>
+      <package-name>com.itorizaba.servicioproductos</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <use-provider>false</use-provider>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </service>
+    <service name="servRestaurante">
+      <implementation-class>www.servicios.Restaurante.servRestaurante</implementation-class>
+      <wsdl-url>file:/C:/Servicios%20WSDL/servicioRestaurante.wsdl</wsdl-url>
+      <local-wsdl-file>servicioRestaurante.wsdl</local-wsdl-file>
+      <service-name>servicioRestaurante</service-name>
+      <port-name>servicioRestaurantePort</port-name>
+      <package-name>com.itorizaba.serviciorestaurante</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <use-provider>false</use-provider>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </service>
   </services>
   <clients>
     <client name="servicioObtenerDetalles">
@@ -396,6 +460,42 @@
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
           <wsimport-option-value>www.cliente.carrera</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="servicioRestaurante">
+      <wsdl-url>http://localhost:8080/AplicacionServicio/servicioRestaurante?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/AplicacionServicio/servicioRestaurante.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">www.cliente.Restaurante</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/AplicacionServicio/servicioRestaurante?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>www.cliente.Restaurante</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

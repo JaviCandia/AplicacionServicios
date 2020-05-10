@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="acae0243-ae2a-459e-b4ac-a6ddeebd9ed7" activeEnvironment="Default" name="testing" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c0151ce2-b1a0-41cf-9d0b-02762550b3d4" wsaVersion="NONE" name="servicioObtenerDetallesBinding" type="wsdl" bindingName="{http://www.itorizaba.com/servicioObtenerDetalles.wsdl}servicioObtenerDetallesBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/AplicacionServicio/servicioObtenerDetalles?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/AplicacionServicio/servicioObtenerDetalles?WSDL"><con:part><con:url>http://localhost:8080/AplicacionServicio/servicioObtenerDetalles?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown.-->
+<wsdl:definitions name="servicioObtenerDetalles" targetNamespace="http://www.itorizaba.com/servicioObtenerDetalles.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.itorizaba.com/servicioObtenerDetalles.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.itorizaba.com/servicioObtenerDetalles.xsd1">
+  <wsdl:documentation>Created using Cape Clear Studio SOA Editor - http://www.capeclear.com</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.itorizaba.com/servicioObtenerDetalles.xsd1" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+      <xsd:complexType name="Alumno">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="num_control" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="nombre" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="carrera" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="promedio" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="semestre" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="direccion" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="edad" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="telefono" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="email" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerDetallesMessageRequest">
+    <wsdl:part name="num_control" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="obtenerDetallesMessageResponse">
+    <wsdl:part name="respuesta" type="xsd1:Alumno"/>
+  </wsdl:message>
+  <wsdl:portType name="servicioObtenerDetallesPortType">
+    <wsdl:operation name="obtenerDetalles">
+      <wsdl:input message="tns:obtenerDetallesMessageRequest"/>
+      <wsdl:output message="tns:obtenerDetallesMessageResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="servicioObtenerDetallesBinding" type="tns:servicioObtenerDetallesPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="obtenerDetalles">
+      <soap:operation soapAction="capeconnect:servicioObtenerDetalles:servicioObtenerDetallesPortType#obtenerDetalles"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicioObtenerDetalles">
+    <wsdl:port binding="tns:servicioObtenerDetallesBinding" name="servicioObtenerDetallesPort">
+      <soap:address location="http://localhost:8080/AplicacionServicio/servicioObtenerDetalles"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/AplicacionServicio/servicioObtenerDetalles</con:endpoint></con:endpoints><con:operation id="30659ca5-7efd-4f1e-b6bc-43e67c2631fe" isOneWay="false" action="capeconnect:servicioObtenerDetalles:servicioObtenerDetallesPortType#obtenerDetalles" name="obtenerDetalles" bindingOperationName="obtenerDetalles" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd2d5e4a-32cb-499a-9439-4a459623d54b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AplicacionServicio/servicioObtenerDetalles</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.itorizaba.com/servicioObtenerDetalles.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:obtenerDetalles>\r
+         <num_control>16010742</num_control>\r
+      </ser:obtenerDetalles>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="capeconnect:servicioObtenerDetalles:servicioObtenerDetallesPortType#obtenerDetalles"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="65512651-c911-4e9e-ba1f-7b272a9d16e2" wsaVersion="NONE" name="servicioalumnosInscritosporSemestreBinding" type="wsdl" bindingName="{http://www.itorizaba.com/servicioalumnosInscritosporSemestre.wsdl}servicioalumnosInscritosporSemestreBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/AplicacionServicio/servicioalumnosInscritosporSemestre?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/AplicacionServicio/servicioalumnosInscritosporSemestre?WSDL"><con:part><con:url>http://localhost:8080/AplicacionServicio/servicioalumnosInscritosporSemestre?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown.-->
+<wsdl:definitions name="servicioalumnosInscritosporSemestre" targetNamespace="http://www.itorizaba.com/servicioalumnosInscritosporSemestre.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.itorizaba.com/servicioalumnosInscritosporSemestre.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.itorizaba.com/servicioalumnosInscritosporSemestre.xsd1">
+  <wsdl:documentation>Created using Cape Clear Studio SOA Editor - http://www.capeclear.com</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.itorizaba.com/servicioalumnosInscritosporSemestre.xsd1" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+      <xsd:complexType name="Alumno">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="num_control" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="nombre" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="carrera" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="promedio" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="semestre" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="direccion" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="edad" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="telefono" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="email" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArregloAlumno">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="item" type="xsd1:Alumno"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="alumnosInscritosporSemestreRequest">
+    <wsdl:part name="semestre" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="alumnosInscritosporSemestreResponse">
+    <wsdl:part name="respuesta" type="xsd1:ArregloAlumno"/>
+  </wsdl:message>
+  <wsdl:portType name="servicioalumnosInscritosporSemestrePortType">
+    <wsdl:operation name="alumnosInscritosporSemestre">
+      <wsdl:input message="tns:alumnosInscritosporSemestreRequest"/>
+      <wsdl:output message="tns:alumnosInscritosporSemestreResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="servicioalumnosInscritosporSemestreBinding" type="tns:servicioalumnosInscritosporSemestrePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="alumnosInscritosporSemestre">
+      <soap:operation soapAction="capeconnect:servicioalumnosInscritosporSemestre:servicioalumnosInscritosporSemestrePortType#alumnosInscritosporSemestre"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicioalumnosInscritosporSemestre">
+    <wsdl:port binding="tns:servicioalumnosInscritosporSemestreBinding" name="servicioalumnosInscritosporSemestrePort">
+      <soap:address location="http://localhost:8080/AplicacionServicio/servicioalumnosInscritosporSemestre"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/AplicacionServicio/servicioalumnosInscritosporSemestre</con:endpoint></con:endpoints><con:operation id="4e5b3cee-0bbc-4d13-b6c6-efedbbba6407" isOneWay="false" action="capeconnect:servicioalumnosInscritosporSemestre:servicioalumnosInscritosporSemestrePortType#alumnosInscritosporSemestre" name="alumnosInscritosporSemestre" bindingOperationName="alumnosInscritosporSemestre" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0965e6b1-950d-44d7-aa4f-514e01dfd5be" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AplicacionServicio/servicioalumnosInscritosporSemestre</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.itorizaba.com/servicioalumnosInscritosporSemestre.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:alumnosInscritosporSemestre>\r
+         <semestre>?</semestre>\r
+      </ser:alumnosInscritosporSemestre>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="capeconnect:servicioalumnosInscritosporSemestre:servicioalumnosInscritosporSemestrePortType#alumnosInscritosporSemestre"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="22965bfe-cff7-4ab5-a832-6942188f5ac8" wsaVersion="NONE" name="servicioAlumnosInscritosBinding" type="wsdl" bindingName="{http://www.itorizaba.com/servicioAlumnosInscritos.wsdl}servicioAlumnosInscritosBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos?WSDL"><con:part><con:url>http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown.-->
+<wsdl:definitions name="servicioAlumnosInscritos" targetNamespace="http://www.itorizaba.com/servicioAlumnosInscritos.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.itorizaba.com/servicioAlumnosInscritos.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.itorizaba.com/servicioAlumnosInscritos.xsd1">
+  <wsdl:documentation>Created using Cape Clear Studio SOA Editor - http://www.capeclear.com</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.itorizaba.com/servicioAlumnosInscritos.xsd1" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+      <xsd:complexType name="Alumno">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="num_control" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="nombre" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="carrera" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="promedio" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="semestre" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="direccion" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="edad" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="telefono" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="email" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArregloAlumno">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="item" type="xsd1:Alumno"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="alumnosInscritosMessageResponse">
+    <wsdl:part name="respuesta" type="xsd1:ArregloAlumno"/>
+  </wsdl:message>
+  <wsdl:message name="alumnosInscritosMessageRequest"></wsdl:message>
+  <wsdl:portType name="servicioAlumnosInscritosPortType">
+    <wsdl:operation name="alumnosInscritos">
+      <wsdl:input message="tns:alumnosInscritosMessageRequest"/>
+      <wsdl:output message="tns:alumnosInscritosMessageResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="servicioAlumnosInscritosBinding" type="tns:servicioAlumnosInscritosPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="alumnosInscritos">
+      <soap:operation soapAction="capeconnect:servicioAlumnosInscritos:servicioAlumnosInscritosPortType#alumnosInscritos"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicioAlumnosInscritos">
+    <wsdl:port binding="tns:servicioAlumnosInscritosBinding" name="servicioAlumnosInscritosPort">
+      <soap:address location="http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos</con:endpoint></con:endpoints><con:operation id="5f71ead1-7785-498d-9491-24b7c0c3fcf6" isOneWay="false" action="capeconnect:servicioAlumnosInscritos:servicioAlumnosInscritosPortType#alumnosInscritos" name="alumnosInscritos" bindingOperationName="alumnosInscritos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="55147c0c-64f3-4c5d-8cb2-b169039da1e0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AplicacionServicio/servicioAlumnosInscritos</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.itorizaba.com/servicioAlumnosInscritos.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:alumnosInscritos/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="capeconnect:servicioAlumnosInscritos:servicioAlumnosInscritosPortType#alumnosInscritos"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
